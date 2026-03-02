@@ -1,0 +1,39 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.synctex.gz
+*.toc
+*.xdv
+*.bcf
+*.run.xml
+_minted-*/
+
+# Build output
+build/
+out/
+*.pdf
+
+# Editor files
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# VS Code / IDE
+.vscode/
+.idea/
+
+# Python (if any scripts)
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
