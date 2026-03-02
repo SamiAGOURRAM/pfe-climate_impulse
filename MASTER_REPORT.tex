@@ -1,0 +1,178 @@
+% ============================================================================
+% MASTER_REPORT.tex — PFE Report: Climate Impulse
+% Reinforcement Learning for Atmospheric Energy Harvesting
+% ============================================================================
+\documentclass[a4paper, 12pt, oneside]{report}
+
+% --- Encoding & Language ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,french]{babel}  % French primary, English secondary
+% Switch with: \selectlanguage{french} or \selectlanguage{english}
+
+% --- Page Layout ---
+\usepackage[
+  top=2.5cm,
+  bottom=2.5cm,
+  left=3cm,
+  right=2.5cm
+]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% --- Fonts ---
+\usepackage{lmodern}
+
+% --- Math ---
+\usepackage{amsmath, amssymb, amsfonts}
+
+% --- Graphics & Figures ---
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric, calc}
+
+% --- Tables ---
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+
+% --- Code Listings ---
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{red},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  breaklines=true,
+  frame=single,
+  captionpos=b
+}
+
+% --- Algorithms ---
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+
+% --- Hyperlinks & References ---
+\usepackage[
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=green!50!black,
+  urlcolor=blue!70!black
+]{hyperref}
+\usepackage{cleveref}
+
+% --- Bibliography ---
+\usepackage[numbers, sort&compress]{natbib}
+
+% --- Headers & Footers ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% --- Glossary (optional, uncomment if needed) ---
+% \usepackage[acronym, toc]{glossaries}
+% \makeglossaries
+% \newacronym{rl}{RL}{Reinforcement Learning}
+% \newacronym{ppo}{PPO}{Proximal Policy Optimization}
+% \newacronym{mdp}{MDP}{Markov Decision Process}
+
+% --- Custom Commands ---
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{TODO:} #1}}
+\newcommand{\projectname}{Climate Impulse}
+\newcommand{\gapkm}{11\,000}
+
+% ============================================================================
+\begin{document}
+
+% --- Title Page ---
+\begin{titlepage}
+  \centering
+  \vspace*{1cm}
+
+  % TODO: Add university and company logos
+  % \includegraphics[width=0.3\textwidth]{figures/university_logo.png}
+  % \hfill
+  % \includegraphics[width=0.3\textwidth]{figures/company_logo.png}
+
+  \vspace{1.5cm}
+
+  {\Large\textbf{École d'Ingénieurs}}\\[0.3cm]  % TODO: Replace with your school name
+  {\large Département Informatique}\\[2cm]
+
+  \rule{\textwidth}{1.5pt}\\[0.4cm]
+  {\Huge\bfseries Projet de Fin d'Études}\\[0.3cm]
+  {\LARGE\bfseries \projectname}\\[0.2cm]
+  {\Large Reinforcement Learning for Atmospheric\\Energy Harvesting in Global Flight}\\[0.4cm]
+  \rule{\textwidth}{1.5pt}\\[2cm]
+
+  {\large
+    \begin{tabular}{rl}
+      \textbf{Réalisé par :}    & \todo{Your Full Name} \\[0.3cm]
+      \textbf{Encadrant école :} & \todo{Academic Supervisor} \\[0.3cm]
+      \textbf{Encadrant entreprise :} & \todo{Industry Supervisor} \\[0.3cm]
+      \textbf{Entreprise :}     & Climate Impulse \\[0.3cm]
+    \end{tabular}
+  }
+
+  \vfill
+
+  {\large Année universitaire 2025--2026}
+
+\end{titlepage}
+
+% --- Front Matter ---
+\pagenumbering{roman}
+
+% Acknowledgements
+\chapter*{Remerciements}
+\addcontentsline{toc}{chapter}{Remerciements}
+\todo{Write acknowledgements}
+
+% Abstract (French)
+\chapter*{Résumé}
+\addcontentsline{toc}{chapter}{Résumé}
+\todo{Write French abstract}
+
+\textbf{Mots-clés :} Apprentissage par renforcement, énergie atmosphérique, thermiques, vol autonome, hydrogène vert.
+
+% Abstract (English)
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\todo{Write English abstract}
+
+\textbf{Keywords:} Reinforcement Learning, atmospheric energy, thermals, autonomous flight, green hydrogen.
+
+% Table of Contents
+\tableofcontents
+\listoffigures
+\listoftables
+
+% --- Main Matter ---
+\cleardoublepage
+\pagenumbering{arabic}
+
+\include{chapters/chapter1}  % General Introduction
+\include{chapters/chapter2}  % Literature Review & State of the Art
+\include{chapters/chapter3}  % System Architecture & Design
+\include{chapters/chapter4}  % Implementation
+\include{chapters/chapter5}  % Experiments, Results & Analysis
+\include{chapters/chapter6}  % Conclusion & Future Work
+
+% --- Bibliography ---
+\bibliographystyle{ieeetr}
+\bibliography{references}
+
+% --- Appendices ---
+\appendix
+% \include{appendices/appendixA}
+
+\end{document}
